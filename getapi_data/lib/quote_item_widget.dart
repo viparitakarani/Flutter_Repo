@@ -15,8 +15,7 @@ class Quote {
   final String author;
   final String background;
 
-  Quote({this.quote,this.author,this.background})
-  {
+  Quote({this.quote, this.author, this.background}) {
     print(this.quote);
   }
 
@@ -24,20 +23,16 @@ class Quote {
     return Quote(
         quote: json['quote'],
         author: json['author'],
-        background: json['background']
-    );
+        background: json['background']);
   }
 }
 
 class QuoteItemWidget extends StatelessWidget {
-
   final Quote data;
   const QuoteItemWidget({Key key, @required this.data}) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
-
     return Container(
       constraints: BoxConstraints.expand(height: 419),
       child: Stack(
@@ -64,26 +59,31 @@ class QuoteItemWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Container(
-                  height: 200,
-                  child: CachedNetworkImage(
-                    imageUrl: this.data.background,
-                    errorWidget: (context,url,error) => Icon(Icons.error),
-                    placeholder: (context,url) => CircularProgressIndicator(),
-                    imageBuilder: (context, imageProvider) => Container(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: imageProvider,
-                            fit: BoxFit.cover,
-                            colorFilter:
-                            ColorFilter.mode(Colors.red, BlendMode.colorBurn)),
+                    height: 200,
+                    child: CachedNetworkImage(
+                      imageUrl: this.data.background,
+                      errorWidget: (context, url, error) => Icon(Icons.error),
+                      placeholder: (context, url) =>
+                          CircularProgressIndicator(),
+                      fadeInCurve: Curves.bounceIn,
+                      fadeOutCurve: Curves.fastOutSlowIn,
+                      fadeInDuration: const Duration(milliseconds: 3000),
+                      fadeOutDuration: const Duration(milliseconds: 3000),
+                      imageBuilder: (context, imageProvider) => Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: imageProvider,
+                              fit: BoxFit.cover,
+                              colorFilter: ColorFilter.mode(
+                                  Colors.red, BlendMode.colorBurn)),
+                        ),
                       ),
-                    ),
-                  )
-                ),
+                    )),
                 Expanded(
                   flex: 1,
                   child: Container(
-                    margin: EdgeInsets.only(left: 20, top: 18, right: 20, bottom: 22),
+                    margin: EdgeInsets.only(
+                        left: 20, top: 18, right: 20, bottom: 22),
                     child: Text(
                       this.data.quote,
                       textAlign: TextAlign.left,
@@ -176,51 +176,50 @@ class QuoteItemWidget extends StatelessWidget {
                     fit: BoxFit.none,
                   ),
                 ),
-              Expanded(
-              child:
-                Container(
-                  width: 83,
-                  height: 32,
-                  margin: EdgeInsets.only(left: 8, top: 25),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Align(
-                        alignment: Alignment.topLeft,
-                        child: Text(
-                          this.data.author,
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 15, 15, 15),
-                            fontFamily: "Lato",
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14,
+                Expanded(
+                  child: Container(
+                    width: 83,
+                    height: 32,
+                    margin: EdgeInsets.only(left: 8, top: 25),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            this.data.author,
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 15, 15, 15),
+                              fontFamily: "Lato",
+                              fontWeight: FontWeight.w400,
+                              fontSize: 14,
+                            ),
                           ),
                         ),
-                      ),
-                      Align(
-                        alignment: Alignment.topLeft,
-                        child: Container(
-                          margin: EdgeInsets.only(top: 3),
-                          child: Opacity(
-                            opacity: 0.4,
-                            child: Text(
-                              "Today, 1:45 PM",
-                              textAlign: TextAlign.left,
-                              style: TextStyle(
-                                color: AppColors.primaryText,
-                                fontFamily: "Lato",
-                                fontWeight: FontWeight.w400,
-                                fontSize: 10,
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Container(
+                            margin: EdgeInsets.only(top: 3),
+                            child: Opacity(
+                              opacity: 0.4,
+                              child: Text(
+                                "Today, 1:45 PM",
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                  color: AppColors.primaryText,
+                                  fontFamily: "Lato",
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 10,
+                                ),
                               ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-              ),
               ],
             ),
           ),
