@@ -7,6 +7,7 @@
     */
 
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:getapidata/values/values.dart';
 
 class Quote {
@@ -64,22 +65,20 @@ class QuoteItemWidget extends StatelessWidget {
               children: [
                 Container(
                   height: 200,
-                  child: Image.network(
-                    this.data.background,
-                    loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent loadingProgress)
-                    {
-                        if (loadingProgress == null)
-                          return child;
-                        return Center(
-                          child: CircularProgressIndicator(
-                            value: loadingProgress.expectedTotalBytes != null
-                                ? loadingProgress.cumulativeBytesLoaded /
-                                loadingProgress.expectedTotalBytes
-                                : null,
-                          ),
-                        );
-                    }
-                  ),
+                  child: CachedNetworkImage(
+                    imageUrl: this.data.background,
+                    errorWidget: (context,url,error) => Icon(Icons.error),
+                    placeholder: (context,url) => CircularProgressIndicator(),
+                    imageBuilder: (context, imageProvider) => Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: imageProvider,
+                            fit: BoxFit.cover,
+                            colorFilter:
+                            ColorFilter.mode(Colors.red, BlendMode.colorBurn)),
+                      ),
+                    ),
+                  )
                 ),
                 Expanded(
                   flex: 1,
