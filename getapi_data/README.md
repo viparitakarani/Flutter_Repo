@@ -1,6 +1,6 @@
-# getapidata
+# Get Data from Internet
 
-A new Flutter application.
+A new Flutter application, for get Json data and Image to internet and chace it in the apps.
 
 # Additional Focus Learning 
 1. Accessing Open API using cache mechanism
