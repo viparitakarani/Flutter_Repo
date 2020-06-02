@@ -3,7 +3,7 @@
 A new Flutter application,
 This apps accesses Json REST API  and Images from internet and cache it in the apps.
 
-# Additional Focus Learning
+# Focus Learning Materials
 1. Accessing Open API using cache mechanism (Flutter Cache REST API Response)
 2. Dealing with complex JSON Response format
 3. Accessing online images using cache mechanism and display the image using animation with  Circular Progress Indicator
