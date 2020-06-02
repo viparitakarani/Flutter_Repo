@@ -2,10 +2,11 @@
 
 A new Flutter application.
 
-# Additional Focus Learning 
+# Additional Focus Learning
 1. Accessing Open API using cache mechanism
 2. Accessing online images using cache mechanism and Circular Progress Indicator
-3. Mudule which is used for caching  CachedNetworkImage,
+3. Mudule which is used for caching
+    -   [CachedNetworkImage](https://pub.dev/packages/cached_network_image),
 
 ## Getting Started
 
