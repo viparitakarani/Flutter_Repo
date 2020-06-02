@@ -58,7 +58,8 @@ class CustomCacheManager extends BaseCacheManager {
 
 Future<http.Response> fetchQuoteWithCache(String url, Map<String, String> headers) async {
   var file = await CustomCacheManager().getSingleFile(url, headers: headers);
-  if (file != null && await file.exists()) {
+  if (file != null && await file.exists())
+  {
     var res = await file.readAsString();
     return http.Response(res, 200);
   }
