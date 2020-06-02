@@ -7,8 +7,8 @@ This apps accesses Json REST API  and Images from internet and cache it in the a
 1. Accessing Open API using cache mechanism (Flutter Cache REST API Response)
 2. Dealing with complex JSON Response format
 3. Accessing online images using cache mechanism and
-   display the image using animation with Circular Progress Indicator
-4. Modules which are used for caching mechanism:
+4. Display the images by using animation with [CircularProgressIndicator](https://api.flutter.dev/flutter/material/CircularProgressIndicator-class.html)
+5. Modules which are used for caching mechanism:
     -   Caching the Images using [CachedNetworkImage](https://pub.dev/packages/cached_network_image)
     -   Caching the REST API Response [flutter_cache_manager](https://pub.dev/documentation/flutter_cache_manager/latest/flutter_cache_manager/flutter_cache_manager-library.html)
     -   Caching the REST API Response [BaseCacheManager](https://pub.dev/documentation/flutter_cache_manager/latest/flutter_cache_manager/BaseCacheManager-class.html)
