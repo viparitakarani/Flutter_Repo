@@ -63,8 +63,7 @@ class QuoteItemWidget extends StatelessWidget {
                     child: CachedNetworkImage(
                       imageUrl: this.data.background,
                       errorWidget: (context, url, error) => Icon(Icons.error),
-                      placeholder: (context, url) =>
-                          CircularProgressIndicator(),
+                      placeholder: (context, url) => CircularProgressIndicator(),
                       fadeInCurve: Curves.bounceIn,
                       fadeOutCurve: Curves.fastOutSlowIn,
                       fadeInDuration: const Duration(milliseconds: 3000),
@@ -75,8 +74,15 @@ class QuoteItemWidget extends StatelessWidget {
                               image: imageProvider,
                               fit: BoxFit.cover,
                               colorFilter: ColorFilter.mode(
-                                  Colors.red, BlendMode.colorBurn)),
+                                  Colors.red, BlendMode.colorBurn),
+                          ),
                         ),
+                        child: Center(
+                          child: ListTile(
+                              title: Text(this.data.quote, textAlign: TextAlign.center, style: TextStyle(color: AppColors.incardText,fontWeight: FontWeight.w500, fontSize: 16.0)),
+                              subtitle: Text("~ by "+this.data.author,textAlign: TextAlign.center,style: TextStyle(color: AppColors.incardText,fontWeight: FontWeight.w500, fontSize: 12.0)),
+                            ),
+                          )
                       ),
                     )),
                 Expanded(
@@ -172,7 +178,7 @@ class QuoteItemWidget extends StatelessWidget {
                   width: 82,
                   height: 82,
                   child: Image.asset(
-                    "assets/images/icon-avatar.png",
+                    "assets/images/in_icon.png",
                     fit: BoxFit.none,
                   ),
                 ),

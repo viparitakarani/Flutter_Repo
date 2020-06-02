@@ -18,4 +18,5 @@ class AppColors {
   static const Color primaryText = Color.fromARGB(255, 0, 0, 0);
   static const Color secondaryText = Color.fromARGB(255, 217, 104, 111);
   static const Color accentText = Color.fromARGB(255, 255, 255, 255);
+  static const Color incardText = Color.fromARGB(204, 204, 204, 204);
 }
