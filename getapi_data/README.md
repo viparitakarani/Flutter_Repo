@@ -1,15 +1,18 @@
 # Get Data from Internet
 
-A new Flutter application, for get Json data and Image to internet and cache it in the apps.
+A new Flutter application,
+This apps accesses Json REST API  and Images from internet and cache it in the apps.
 
 # Additional Focus Learning
 1. Accessing Open API using cache mechanism (Flutter Cache REST API Response)
-2. Dealing with complex JSON Respond format
+2. Dealing with complex JSON Response format
 3. Accessing online images using cache mechanism and display the image using animation with  Circular Progress Indicator
 4. Module which is used for caching
     -   Caching the Images using [CachedNetworkImage](https://pub.dev/packages/cached_network_image)
     -   Caching the REST API Response [flutter_cache_manager](https://pub.dev/documentation/flutter_cache_manager/latest/flutter_cache_manager/flutter_cache_manager-library.html)
     -   Caching the REST API Response [BaseCacheManager](https://pub.dev/documentation/flutter_cache_manager/latest/flutter_cache_manager/BaseCacheManager-class.html)
+
+
 
 ## Getting Started with Flutter
 
