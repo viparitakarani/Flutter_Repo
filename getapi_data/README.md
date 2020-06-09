@@ -1,7 +1,7 @@
 # Get Data from Internet
 
 A new Flutter application,
-This apps accesses Json REST API  and Images from internet and cache it in the apps.
+This apps accesses Json REST API and Images from internet and cache it in the apps.
 
 # Learning Materials in this Project
 1. Accessing Open API using cache mechanism (Flutter Cache REST API Response)
