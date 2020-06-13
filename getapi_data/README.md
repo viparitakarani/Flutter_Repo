@@ -1,6 +1,6 @@
 # Get Data from Internet
 
-A new Flutter application,
+A new Flutter application, 
 This apps accesses Json REST API and Images from internet and cache it in the apps.
 
 # Learning Materials in this Project
